@@ -46,6 +46,9 @@ Write-Host "3 - Atualizar ambos."
 $opcao = Read-Host "`nEscolha a opção"
 $basePath = "D:\SiematecSolucoes\$clienteNome"
 
+
+# Nessa função é interesante também a gente conseguir fazer a verificação da versão para ver se 
+# realmente precisa ser atualizada pois pode sumir o exe caso já esteja na ultima versão.
 function Atualizar-Exe ($TARGET) {
     if (-not (Test-Path $TARGET)) {
         Write-Host "Arquivo EXE não encontrado: $TARGET"
@@ -110,3 +113,5 @@ switch ($opcao) {
         exit
     }
 }
+
+# Proxima feacture é confirmar a versão do finantec ou doctorVet usando a versão encontrada no BD.
